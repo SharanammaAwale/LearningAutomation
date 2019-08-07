@@ -1,0 +1,90 @@
+
+Login As: Sail ID / Pass (sharas77 / Shambhuling@2021)
+dev
+cd /enovia/server/scripts
+mql
+set context user nitishgr pass 123457niti ;
+
+
+Test
+cd /enovia/studio/scripts
+mql
+
+
+1) Asemmbly Battery connection to Part Master
+expand bus 'Part Master' <PM> '' ;
+
+2) aSSEMBLY bATTERY ATTRIBUTE VALUES (Chemistry values/ assembly battery attributes ) -
+print bus 'Assembly Battery' '<Assem bat>' - select attribute.value ; 
+
+3) Assemblt bat rel value
+expand bus 'Assembly Battery' '<Assem bat>' - select rel attribute.value ;
+
+4) MEP values
+print bus Part '<MEP>' '<supplier rev>' select attribute.value ;
+
+5)expand bus 'Part Master' 0000028R5751  '' ;
+
+6) expand bus 'Part Master' 0000028R5751  '' select bus id ;
+
+  1  Manufacturer Equivalent  to  Part  0000028R5751_IBMPN_0000028R5751  3M
+    id = 65383.24361.44999.24265
+  1  Related Assembly Battery  to  Assembly Battery   SH  -
+    id = 65383.24361.44999.32888
+
+7)>print bus 65383.24361.44999.24265 select attribute.value;
+
+
+8)>print bus Part '0000028R5751_IBMPN_0000028R5751' 3M  select attribute.value;
+
+MQL<6>print bus 'Assembly Battery' 'ANA TIW' - select name relationship[Relate$
+business object  Assembly Battery ANA TIW -
+    name = ANA TIW
+    relationship[Related Assembly Battery].from.name = 0000010N7691
+
+
+
+Nominal Battery Voltage *Rated Capacity = Rated Capacity - Watt-hour
+
+DATA MART
+
+select * from IBMPARTS.QUALIFICATION
+
+select * from BAT_COMPLIANCE.BATTERIES ;
+
+select * from BAT_COMPLIANCE.BATTERIES where BATTERY_PN= '0000010N7691';
+
+
+select * from RPT.BATTERIES ORDER BY LAST_MODIFY_DATE DESC ;
+
+select * from RPT.BATTERIES where BATTERY_NAME in ('AB2019','31503-01')  ORDER BY LAST_MODIFY_DATE DESC ;
+
+cbbrobot/ins0mnia
+
+
+
+MIRROR MART -- 
+
+-- SELECT * From MM.EC WHERE EC_MC_ID = '10000P16688'    --- MM.EC --> contains ECO infomation
+
+-- select * from MM.ECAI WHERE OID_EC = 72056545377547487 --- MM.ECAI --> contains ECO affected item infomation
+
+-- SELECT * FROM MM.ITEM WHERE ITM_ID = '0000001MD685'   --- MM.ITEM --> contains parts n product info
+
+--SELECT * FROM MM.ITEM WHERE OID_MITEM = 72056558170797961  (part)
+
+-- SELECT * FROM MM.ITEM WHERE ITM_ID = '2000013MAR19'
+
+--SELECT * FROM MM.ITEM WHERE OID_MITEM = 72056558170797962  (product)
+
+
+
+
+DMINT 
+3720  
+cbbint.pok.ibm.com
+
+MRMRMCCD
+saildb1d.pok.ibm.com
+60029
+
