@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="36083" started-at="2019-08-01T12:27:29 IST" finished-at="2019-08-01T12:28:06 IST">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="36083" started-at="2019-08-01T12:27:29 IST" finished-at="2019-08-01T12:28:06 IST">
+      <class name="com.test.FirstMavenTest">
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.test.FirstMavenTest@cb5822]" name="TC1" duration-ms="20094" started-at="2019-08-01T12:27:30 IST" finished-at="2019-08-01T12:27:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+      </class> <!-- com.test.FirstMavenTest -->
+      <class name="com.test.SecondMavenTest">
+        <test-method status="PASS" signature="TC2()[pri:0, instance:com.test.SecondMavenTest@4b9e13df]" name="TC2" duration-ms="15871" started-at="2019-08-01T12:27:50 IST" finished-at="2019-08-01T12:28:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC2 -->
+      </class> <!-- com.test.SecondMavenTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
